@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Leaflet | R Tutorials from SCC</title>
+  <meta name="description" content="This is a R tutorials from SCC
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Leaflet | R Tutorials from SCC" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a R tutorials from SCC
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Leaflet | R Tutorials from SCC" />
+  
+  <meta name="twitter:description" content="This is a R tutorials from SCC
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file." />
+  
+
+<meta name="author" content="AA" />
+
+
+<meta name="date" content="2022-02-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R tutorials from SCC</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hello world</a></li>
+<li class="chapter" data-level="2" data-path="leaflet.html"><a href="leaflet.html"><i class="fa fa-check"></i><b>2</b> Leaflet</a><ul>
+<li class="chapter" data-level="2.1" data-path="leaflet.html"><a href="leaflet.html#preparing-the-dataset-and-making-a-simple-map"><i class="fa fa-check"></i><b>2.1</b> Preparing the dataset and making a simple map</a></li>
+<li class="chapter" data-level="2.2" data-path="leaflet.html"><a href="leaflet.html#marking-an-application-and-adding-a-raster-image"><i class="fa fa-check"></i><b>2.2</b> Marking an application and adding a raster image</a></li>
+<li class="chapter" data-level="2.3" data-path="leaflet.html"><a href="leaflet.html#conclusion"><i class="fa fa-check"></i><b>2.3</b> Conclusion</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Tutorials from SCC</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="leaflet" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Leaflet</h1>
+<p>In this tutorial you will know, how to implement a raster layer into your maps. We will observe only an option for adding a raster layer as an object, which only “covers” the basemap. For more advanced way of setting a raster map as an element of the WMS server, we will need WMS server itself. This task need more resources and knowledge of the project server-side. Therefore, we will observe the simplest way, which needs only images and RStudio. No advance knowledge of programming needed, just some familiarity with RStudio: what it is, how to add commands.</p>
+<div id="preparing-the-dataset-and-making-a-simple-map" class="section level2">
+<h2><span class="header-section-number">2.1</span> Preparing the dataset and making a simple map</h2>
+<p>Let’s think of possible questions that are risen before a historian, who has some data, related to the space. It will be useful to visualize them as on the map.</p>
+<p>For instance, we have a table, which contains some geographical names that can be easily identified with longitudes and latitudes.</p>
+<p>For example, we have an example of 5 entities with Italian cities that simply can be visualized on a modern map. Let’s use the most popular library for mapping - <code>leaflet</code>. It’s a simple, powerful, flexible and highly customizable library, which allows to make awesome maps.</p>
+<pre><code>##                     City      long      lat           Province
+## 1                 Madrid -3.703889 40.41250 Area metropolitana
+## 2                Cordoba -4.778700 37.88680          Andalusia
+## 3                Segovia -4.118333 40.94806    Castilia y Leon
+## 4 Santiago de Compostela -8.544444 42.87778            Galicia
+## 5              Santander -3.805000 43.46278          Cantabria</code></pre>
+<div id="htmlwidget-712f7abc3f2d03b8662a" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-712f7abc3f2d03b8662a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[40.4125,37.8868,40.948056,42.877778,43.462778],[-3.703889,-4.7787,-4.118333,-8.544444,-3.805],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Area metropolitana","Andalusia","Castilia y Leon","Galicia","Cantabria"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.8868,43.462778],"lng":[-8.544444,-3.703889]}},"evals":[],"jsHooks":[]}</script>
+<p>The code of this very basic map is simple. First, you need to create a map and cast leaflet function. Use magritte <code>%&gt;%</code> to connect functions without multiple calling. Then, create a basemap via <code>addTiles()</code>. For the next step, let’s add our points. Since we have already prepared a dataset, we will use it with an operator <code>$</code> which will indicate on particular columns with geodata. We basically need two columns: <code>lng</code> and <code>lat</code>, but we can also add a popup for our points. Therefore, we need to use <code>lng=spain_sample$long</code>, <code>lat=spain_sample$lat</code> that R understand, which columns contain the information about coordinates.</p>
+<pre><code>install.packages(&quot;leaflet&quot;)
+map &lt;- leaflet() %&gt;%
+addTiles() %&gt;%  # Default OpenStreetMap basemap
+addMarkers(lng=spain_sample$long, lat=spain_sample$lat,
+popup=spain_sample$Province&quot;)
+map</code></pre>
+<p>This is a basic basemap, but you can add any other map own via <code>addProviderTiles()</code>. Let’s use something not very typical for maps, for instance a watercolor basemap, provided by Stamen.</p>
+<pre><code>map &lt;- leaflet() %&gt;%`
+addProviderTiles(&quot;Stamen.Watercolor&quot;) %&gt;%  # All Stamen maps avalible in http://maps.stamen.com NOTE use &quot;&quot; for adding custom maps
+addMarkers(lng=spain_sample$long, lat=spain_sample$lat,`
+popup=spain_sample$Province&quot;)`
+map</code></pre>
+<p>And we will get an artistic result.</p>
+<div id="htmlwidget-ce2c453d76ae6fbd4630" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ce2c453d76ae6fbd4630">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stamen.Watercolor",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[40.4125,37.8868,40.948056,42.877778,43.462778],[-3.703889,-4.7787,-4.118333,-8.544444,-3.805],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Area metropolitana","Andalusia","Castilia y Leon","Galicia","Cantabria"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.8868,43.462778],"lng":[-8.544444,-3.703889]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="marking-an-application-and-adding-a-raster-image" class="section level2">
+<h2><span class="header-section-number">2.2</span> Marking an application and adding a raster image</h2>
+<p>As we already know how to make very basic maps, we can now create a map with a raster layer above, without maintaining a Web Map Server, which store geographical data.</p>
+<p>I found a map in David Rumsey Historical Map Collection
+<a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~252077~5517658:Spain-and-Portugal-?sort=pub_list_no_initialsort%2Cpub_list_no_initialsort%2Cpub_date%2Cpub_date&amp;qvq=w4s:/what%2FWorld%2BAtlas%2Fwhere%2FSpain;q:spain;sort:pub_list_no_initialsort%2Cpub_list_no_initialsort%2Cpub_date%2Cpub_date;lc:RUMSEY~8~1&amp;mi=16&amp;trs=655">a map in David Rumsey Historical Map Collection Spain in Portugal in the 19th century (1832)</a>.
+This resource has enormous number of historical maps, which can be exported as jpg or geotiff. We need jpg. I cuted this image in Photoshop and saved it as .png.
+What we need first, is to define, if we wish to make the app.
+For doing this, let’s create a Shiny App, via <code>File &gt; New File</code>. RStudio will offer you to create a directory, where RStudio will storage the project and where you can add resources for the app.</p>
+<p>You will get a standard shiny layout with UI - user interface with graphic elements, and server part, where we will implement our functions. There is a huge variety of shiny extensions, but we will use just basics.</p>
+<pre><code>library(shiny)
+
+# Define UI for application that draws a histogram
+ui &lt;- fluidPage(
+
+    # Application title
+    titlePanel(&quot;Old Faithful Geyser Data&quot;),
+
+    # Sidebar with a slider input for number of bins 
+    sidebarLayout(
+        sidebarPanel(
+            sliderInput(&quot;bins&quot;,
+                        &quot;Number of bins:&quot;,
+                        min = 1,
+                        max = 50,
+                        value = 30)
+        ),
+
+        # Show a plot of the generated distribution
+        mainPanel(
+           plotOutput(&quot;distPlot&quot;)
+        )
+    )
+)
+
+# Define server logic required to draw a histogram
+server &lt;- function(input, output) {
+
+    output$distPlot &lt;- renderPlot({
+        # generate bins based on input$bins from ui.R
+        x    &lt;- faithful[, 2]
+        bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)
+
+        # draw the histogram with the specified number of bins
+        hist(x, breaks = bins, col = &#39;darkgray&#39;, border = &#39;white&#39;)
+    })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)</code></pre>
+<p>We need to create our own app with our data that deploy it in the future. Basically we need only the list of libraries, UI and server, so delete the content of Shiny app example. Let’s add our other libraries we need. We will need leaflet, DT for operations with datatables and htmlwidgets for adding a JavaScript function, I will explain it further.</p>
+<pre><code>library(shiny)
+library(leaflet)
+library(DT)
+library(htmlwidgets)
+ui &lt;- fluidPage(
+    # Application title
+    titlePanel(&quot;Map app&quot;),
+        mainPanel()
+)
+
+server &lt;- function(input, output) {
+}
+
+shinyApp(ui = ui, server = server)</code></pre>
+<p>We need to create our own app with our data that deploy it in the future. Basically we need only the list of libraries, UI and server, so delete the content of Shiny app example.</p>
+<p>At this moment this app is empty. Let’s add the data. First of all, we need to place our map on the main panel and use <code>mainPanel(leafletOutput(&quot;map&quot;))</code>.</p>
+<p>Then, let’s move to the server part, where we explain R, what is the ‘map’ we call.
+For doing this, we define “map” via output and indicate “map” using <code>$</code>. Then, the code will be the same as we created before.</p>
+<pre><code>output$map &lt;- renderLeaflet({
+leaflet() %&gt;% 
+addProviderTiles(&quot;Stamen.Watercolor&quot;) %&gt;%
+addMarkers(lng=spain_sample$long, lat=spain_sample$lat, popup=spain_sample$Province)
+})</code></pre>
+<p>But for adding a raster layer, we need to do a certain trick. First of all, we should create a folder indise our project <code>www</code> where we will collect raster maps. In this case, our project will look so:</p>
+<p>Then, let’s create a function, which will add a raster image to the map. It’s an additional function, created in JavaScript. We should use <code>htmlwidgets</code> library and onRender function, where we will add our image and its borders. I already prepared the coordinates. Note, these coordinates represent a diagonal between the lowest left and highest right points.</p>
+<pre><code>htmlwidgets::onRender(&quot;
+function(el, x) {
+var map = this;
+var imageUrl = &#39;map_spain.png&#39;; 
+var imageBounds = [[35.798941, -10.478349], [44.037202, 4.733163]];
+L.imageOverlay(imageUrl, imageBounds).addTo(map);
+}
+&quot;)</code></pre>
+<p>Note, this maps is not super accurate that’s connceted with projection errors. For avoiding it, we can use Georefferencing for modern (19th century and below) maps. But it’s a separate topic.
+For now let’s make more advanced popups with additional information. For this we shall use <code>htmlwidgets</code> too, because we will pack the information about the point inside a <code>html</code> container. For making it, we will use <code>paste</code> and present the data we wish to show if we are working on <code>html</code> page:</p>
+<pre><code>addMarkers(lng=spain_sample$long, lat=spain_sample$lat, popup =
+paste(&#39;&lt;font face=&quot;helvetica&quot;&#39;,
+&#39;&lt;font size=&quot;3&quot;&gt;&#39;, &#39;&lt;strong&gt;&#39;, spain_sample$Province, &#39;&lt;/strong&gt;&#39;, &#39;&lt;/font&gt;&#39;,
+&#39;&lt;br/&gt;&#39;,&#39;&lt;strong&gt;&#39;, &#39;City: &#39;, &#39;&lt;/strong&gt;&#39;, spain_sample$City, 
+&#39;&lt;/font&gt;&#39;,&#39; &#39;))</code></pre>
+<p>For the last thing, let’s add style to our map and make it for the whole screen.
+<code>tags$style(type = &quot;text/css&quot;, &quot;#map {height: calc(90vh - 80px) !important;}&quot;)</code></p>
+<p>In total, our application sould be like this example:</p>
+<pre><code>library(shiny)
+library(readr)
+library(DT)
+library(leaflet)
+
+#data
+spain_sample &lt;- read_delim(&quot;spain_sample.csv&quot;, 
+    delim = &quot;;&quot;, escape_double = FALSE, trim_ws = TRUE)
+
+ui &lt;- fluidPage(
+    #Application style.
+    tags$style(type = &quot;text/css&quot;, &quot;#map {height: calc(90vh - 80px) !important;}&quot;),
+    
+    # Application title
+    titlePanel(&quot;Map app&quot;),
+    mainPanel(leafletOutput(&#39;map&#39;))
+        )
+
+
+server &lt;- function(input, output) {
+
+    output$map &lt;- renderLeaflet({
+        leaflet() %&gt;% 
+            addProviderTiles(&quot;Stamen.Watercolor&quot;) %&gt;%
+            addMarkers(lng=spain_sample$long, lat=spain_sample$lat, popup =
+                           paste(&#39;&lt;font face=&quot;helvetica&quot;&#39;,
+                                 &#39;&lt;font size=&quot;3&quot;&gt;&#39;, &#39;&lt;strong&gt;&#39;, spain_sample$Province, &#39;&lt;/strong&gt;&#39;, &#39;&lt;/font&gt;&#39;,
+                                 &#39;&lt;br/&gt;&#39;,&#39;&lt;strong&gt;&#39;, &#39;City: &#39;, &#39;&lt;/strong&gt;&#39;, spain_sample$City, 
+                                 &#39;&lt;/font&gt;&#39;,&#39; &#39;))  %&gt;%
+        htmlwidgets::onRender(&quot;
+      function(el, x) {
+        var map = this;
+        var imageUrl = &#39;map_spain.png&#39;;
+        var imageBounds = [[35.798941, -10.478349], [44.037202, 4.733163]];
+        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+      }
+      &quot;)
+    })
+    
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)</code></pre>
+<div id="htmlwidget-3742074b2b9707325082" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3742074b2b9707325082">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stamen.Watercolor",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[40.4125,37.8868,40.948056,42.877778,43.462778],[-3.703889,-4.7787,-4.118333,-8.544444,-3.805],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<font face=\"helvetica\" <font size=\"3\"> <strong> Area metropolitana <\/strong> <\/font> <br/> <strong> City:  <\/strong> Madrid <\/font>  ","<font face=\"helvetica\" <font size=\"3\"> <strong> Andalusia <\/strong> <\/font> <br/> <strong> City:  <\/strong> Cordoba <\/font>  ","<font face=\"helvetica\" <font size=\"3\"> <strong> Castilia y Leon <\/strong> <\/font> <br/> <strong> City:  <\/strong> Segovia <\/font>  ","<font face=\"helvetica\" <font size=\"3\"> <strong> Galicia <\/strong> <\/font> <br/> <strong> City:  <\/strong> Santiago de Compostela <\/font>  ","<font face=\"helvetica\" <font size=\"3\"> <strong> Cantabria <\/strong> <\/font> <br/> <strong> City:  <\/strong> Santander <\/font>  "],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.8868,43.462778],"lng":[-8.544444,-3.703889]}},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x) {\n        var map = this;\n        var imageUrl = 'https://sun9-18.userapi.com/impg/cAHOligKsw6hjPWdZZtvgWnXwZ16heXV5DrdlQ/iB02-Ok5m7s.jpg?size=2560x1890&quality=95&sign=ff2034d5e42307272bb197ebbb8802dc&type=album';\n        var imageBounds = [[35.798941, -10.478349], [44.037202, 4.733163]];\n        L.imageOverlay(imageUrl, imageBounds).addTo(map);\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+</div>
+<div id="conclusion" class="section level2">
+<h2><span class="header-section-number">2.3</span> Conclusion</h2>
+<p>We finihed this little app and added a historical map without implementing a WMS layer.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
