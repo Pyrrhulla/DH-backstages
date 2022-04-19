@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 What R can make, what cannot and what ‘it’s possible, but…’? | DH tutorials</title>
+  <meta name="description" content="Chapter 2 What R can make, what cannot and what ‘it’s possible, but…’? | DH tutorials" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 What R can make, what cannot and what ‘it’s possible, but…’? | DH tutorials" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 What R can make, what cannot and what ‘it’s possible, but…’? | DH tutorials" />
+  
+  
+  
+
+<meta name="author" content="AA" />
+
+
+<meta name="date" content="2022-04-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="mapping-in-leaflet-with-raster-historical-layers.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hello world</a></li>
+<li class="chapter" data-level="2" data-path="what-r-can-make-what-cannot-and-what-its-possible-but.html"><a href="what-r-can-make-what-cannot-and-what-its-possible-but.html"><i class="fa fa-check"></i><b>2</b> What R can make, what cannot and what ‘it’s possible, but…’?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="what-r-can-make-what-cannot-and-what-its-possible-but.html"><a href="what-r-can-make-what-cannot-and-what-its-possible-but.html#ggplot2-for-history-advantages-and-challenges"><i class="fa fa-check"></i><b>2.1</b> ggplot2 for history: advantages and challenges</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html"><i class="fa fa-check"></i><b>3</b> Mapping in Leaflet with raster historical layers</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#preparing-the-dataset-and-making-a-simple-map"><i class="fa fa-check"></i><b>3.1</b> Preparing the dataset and making a simple map</a></li>
+<li class="chapter" data-level="3.2" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#marking-an-application-and-adding-a-raster-image"><i class="fa fa-check"></i><b>3.2</b> Marking an application and adding a raster image</a></li>
+<li class="chapter" data-level="3.3" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#conclusion"><i class="fa fa-check"></i><b>3.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="timeline.html"><a href="timeline.html"><i class="fa fa-check"></i><b>4</b> Timeline</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="timeline.html"><a href="timeline.html#timeline-1"><i class="fa fa-check"></i><b>4.1</b> Timeline</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DH tutorials</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="what-r-can-make-what-cannot-and-what-its-possible-but" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> What R can make, what cannot and what ‘it’s possible, but…’?</h1>
+<p>In this part I shall briefly explain some fundamentals of visualization in R with a focus of how R instruments can be used for historical research.
+R is a great language for data visualization. Since it was created as a statistical language, R has well developed, clear and simple set of instruments for graphic visualization. Here I shall show some examples of very basic instruments of visulaization in R, their advantages and limitations, and how they can be used in historical visualization. In this part I aim to give some general overview of the question that will be considered in details in further chapters.
+Historians deal with a specific kind of data. Often, the exact information is missed. For instance, we have only a period of time, but not an exact date for many events. In addition, we have entities that correspond several categories, for example, for the A event there were several groups of participants. Finally, the event A happened in a place, which location is unclear or does not exist anymore. All these challenges can be solved in R libraries. However, it needs some creative approach and coding above standard R libraries.</p>
+<p>In order to see, what R can do, what can’t and what ‘can, but still..’ let’s start from the most common library for graphic visualization in R <code>ggplot2</code></p>
+<div id="ggplot2-for-history-advantages-and-challenges" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> ggplot2 for history: advantages and challenges</h2>
+<p><code>ggplot2</code> gives lots of instruments to create any kind of graph on the basis of dataset, coordinate system and geoms, i.e. visual presentation of the data.</p>
+<p>Accordingly <code>ggplot2</code>consists of several basic components: data, aesthetics and coordinates:</p>
+<pre><code>Ggplot(data) + &lt;geom_function&gt;(mapping = aes(&lt;mappings&gt;), stat, position) + &lt;coordinate_function&gt; + &lt;facet_function&gt; + &lt;scale_function&gt; + &lt;theme_function&gt;</code></pre>
+<p>It is highly customizable and allows to render typographic ready graphs. However <code>ggplot2</code> graphics is less interactive and more static that make <code>ggplot2</code> relatively fast but also less friendly to users, if one needs something more than an image and wish to add some dynamic parameters. A static approach works perfectly for visualization of thousands entities on the graph and creating an image of the tendencies or picture in general. Nevertheless, on the basis of a static image user cannot interact with each particular entity that might be essencial for historical visualization, when the aim is to show a particular element, which contains a lot of information, in the context of the system or it’s relationships with other elements.</p>
+<p>For instance, implementing such a simple element as popup for a point, which will bring more detailed information about this particular entity, for example, year, title in the source, brief description, needs an additional JavaScript extension, because by default this function is absent in a standard <code>ggplot2</code> library. A selection of a particular entity is not possible by default either, however it can be added manually in a form of brush, where the output with the data will be shows as an another elemtnt - a data table, a plain text, etc. It is commonly used in <code>ggplot2</code> visualization and in documentation it looks:</p>
+<pre><code>brushedPoints(df, brush, xvar = NULL, yvar = NULL, panelvar1 = NULL,
+  panelvar2 = NULL, allRows = FALSE)</code></pre>
+<p>For implementing this element, we need to do a couple of manipulations. First of all, it can be made only within shiny framework, which I will consider in details in the next part of the tutorial. Secondly, on a very basic level this approach means that in the dataset, the categories suggested for x and y axis might be only single that’s often not the case for historical data. For example, we would like to visualize a dataset, which contains the information about revolutions in some period of history. We have titles, years and key groups of participants. Everything works fine until the moment, when we discover that in some entities we have more than one group of participants. How shall we explain the R that we need to put this particular entity into two groups? Let’s discuss this question in the next chapter, which focuses on historical data specifics and how to approach it in an optimal way.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mapping-in-leaflet-with-raster-historical-layers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
