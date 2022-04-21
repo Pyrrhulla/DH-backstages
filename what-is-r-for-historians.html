@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 What is R for historians? | DH tutorials</title>
+  <meta name="description" content="Chapter 2 What is R for historians? | DH tutorials" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 What is R for historians? | DH tutorials" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 What is R for historians? | DH tutorials" />
+  
+  
+  
+
+<meta name="author" content="AA" />
+
+
+<meta name="date" content="2022-04-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DH Tutorial Series</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hello world</a></li>
+<li class="chapter" data-level="2" data-path="what-is-r-for-historians.html"><a href="what-is-r-for-historians.html"><i class="fa fa-check"></i><b>2</b> What is R for historians?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="what-is-r-for-historians.html"><a href="what-is-r-for-historians.html#what-are-the-aims-of-data-visualization"><i class="fa fa-check"></i><b>2.1</b> What are the aims of data visualization?</a></li>
+<li class="chapter" data-level="2.2" data-path="what-is-r-for-historians.html"><a href="what-is-r-for-historians.html#what-kind-of-historical-data-can-be-potentially-visualized-in-r"><i class="fa fa-check"></i><b>2.2</b> What kind of historical data can be potentially visualized in R?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><i class="fa fa-check"></i><b>3</b> From soul to body: what is the optimal format for the task?</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html#static-graphics"><i class="fa fa-check"></i><b>3.1</b> Static graphics</a></li>
+<li class="chapter" data-level="3.2" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html#app"><i class="fa fa-check"></i><b>3.2</b> App</a></li>
+<li class="chapter" data-level="3.3" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html#markdown"><i class="fa fa-check"></i><b>3.3</b> Markdown</a></li>
+<li class="chapter" data-level="3.4" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html#other-methods"><i class="fa fa-check"></i><b>3.4</b> Other methods</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="what-r-can-make-what-cannot-and-what-its-possible-but.html"><a href="what-r-can-make-what-cannot-and-what-its-possible-but.html"><i class="fa fa-check"></i><b>4</b> What R can make, what cannot and what ‘it’s possible, but…’?</a></li>
+<li class="chapter" data-level="5" data-path="ggplot2-for-history-advantages-and-challenges.html"><a href="ggplot2-for-history-advantages-and-challenges.html"><i class="fa fa-check"></i><b>5</b> ggplot2 for history: advantages and challenges</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ggplot2-for-history-advantages-and-challenges.html"><a href="ggplot2-for-history-advantages-and-challenges.html#historical-data-and-graphic-libraries"><i class="fa fa-check"></i><b>5.1</b> Historical data and graphic libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html"><i class="fa fa-check"></i><b>6</b> Mapping in Leaflet with raster historical layers</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#preparing-the-dataset-and-making-a-simple-map"><i class="fa fa-check"></i><b>6.1</b> Preparing the dataset and making a simple map</a></li>
+<li class="chapter" data-level="6.2" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#marking-an-application-and-adding-a-raster-image"><i class="fa fa-check"></i><b>6.2</b> Marking an application and adding a raster image</a></li>
+<li class="chapter" data-level="6.3" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#conclusion"><i class="fa fa-check"></i><b>6.3</b> Conclusion</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DH tutorials</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="what-is-r-for-historians" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> What is R for historians?</h1>
+<p>In this part I shall briefly explain some fundamentals of visualization in R with a focus of how R instruments can be used for historical research.
+R is a great language for data visualization. Since it was created as a statistical language, R has well developed, clear and simple set of instruments for graphic visualization. Here I shall show some examples of very basic instruments of visulaization in R, their advantages and limitations, and how they can be used in historical visualization.
+In this part I aim to give some general overview of the question that will be considered in details in further chapters.
+Historians deal with a specific kind of data. Often, the exact information is missed. For instance, we have only a period of time, but not an exact date for many events. In addition, we have entities that correspond several categories, for example, for the A event there were several groups of participants. Finally, the event A happened in a place, which location is unclear or does not exist anymore. All these challenges can be solved in R libraries. However, it needs some creative approach and coding above standard R libraries.</p>
+<div id="what-are-the-aims-of-data-visualization" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> What are the aims of data visualization?</h2>
+<p>There are several aims of the data visualization. Firstly, a graphic presentation of the data aims to show readers and researchers a clear image of the data, which was obtained within the research. Historians (alike social scientists) deal with the abstract information, not physical. For instance, we need to operate with some demographical statistics for a certain period in history, presented as a table with years and population numbers. Let’s have a look at the statistics for New York population in 1800-1870</p>
+<div id="htmlwidget-f2a7a2d72c1def8bb8ce" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f2a7a2d72c1def8bb8ce">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8"],[1800,1810,1820,1830,1840,1850,1860,1870],[79216,119734,152056,242278,391114,696115,1174779,1478103]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Year<\/th>\n      <th>Population<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>This little table looks good and clear enough, however, more likely social historians will have thousands of entities, categorizes in various group. For a cognitive perspective, a graphic image is more clear and preferable for demonstration of the abstract information, because it allow to imagine the abstract data in physical categories, such as length, size, etc.</p>
+<p><img src="_main_files/figure-html/eruptions_new_york_graph-1.png" width="672" /></p>
+<p>On this graphic image the crucial dynamics of population growing is visible in a crearer way. This example is typical for statistical data, however, statistics is not the only kind of data, which can be visualized for giving an optimal way of demonstration. Geographical data is even brighter example, because the visualizations converts abstract longitudes and latitudes into a point on the map. For example, let’s imagine some data of geography of Spain:</p>
+<div id="htmlwidget-ea183607080cd0f64300" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ea183607080cd0f64300">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["Madrid","Cordoba","Segovia","Santiago de Compostela","Santander"],[-3.703889,-4.7787,-4.118333,-8.544444,-3.805],[40.4125,37.8868,40.948056,42.877778,43.462778],["Area metropolitana","Andalusia","Castilia y Leon","Galicia","Cantabria"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>City<\/th>\n      <th>long<\/th>\n      <th>lat<\/th>\n      <th>Province<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-317500603df4342f36b2" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-317500603df4342f36b2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stamen.Watercolor",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[40.4125,37.8868,40.948056,42.877778,43.462778],[-3.703889,-4.7787,-4.118333,-8.544444,-3.805],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<font face=\"helvetica\" <font size=\"3\"> <strong> Area metropolitana <\/strong> <\/font> <br/> <strong> City:  <\/strong> Madrid <\/font>  ","<font face=\"helvetica\" <font size=\"3\"> <strong> Andalusia <\/strong> <\/font> <br/> <strong> City:  <\/strong> Cordoba <\/font>  ","<font face=\"helvetica\" <font size=\"3\"> <strong> Castilia y Leon <\/strong> <\/font> <br/> <strong> City:  <\/strong> Segovia <\/font>  ","<font face=\"helvetica\" <font size=\"3\"> <strong> Galicia <\/strong> <\/font> <br/> <strong> City:  <\/strong> Santiago de Compostela <\/font>  ","<font face=\"helvetica\" <font size=\"3\"> <strong> Cantabria <\/strong> <\/font> <br/> <strong> City:  <\/strong> Santander <\/font>  "],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.8868,43.462778],"lng":[-8.544444,-3.703889]}},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x) {\n        var map = this;\n       var imageUrl = 'https://sun9-35.userapi.com/impg/-VBt-aqiuXxKDPBDOtCNlJDD-6iPIv42z0l3cQ/D0ZIOvX0SLw.jpg?size=2560x2008&quality=95&sign=e6dfd8c37a988b874f359d47590a8fb8&type=album';\n        var imageBounds = [[35.798941, -10.178349], [44.037202, 4.733163]];\n        L.imageOverlay(imageUrl, imageBounds).addTo(map);\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+<p>These elementary examples show some basic instruments of visualization in the case if we have exact information about an event, phenomena or unit. Missed information or dubious information, while different sources provide different evidences is one of the challenges of the historical data that we will examine in next parts.</p>
+<p>Secondly, the aim of visualization is providing a material for data analysis. A graphic image, especially in the case of thousands of entities provides opportunities to see a context and behaviour of particular entity in a comparative perspective, showing tendencies and dependencies of the whole data.</p>
+</div>
+<div id="what-kind-of-historical-data-can-be-potentially-visualized-in-r" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> What kind of historical data can be potentially visualized in R?</h2>
+<p>Historians operate with tons of various information and its context. The context accordingly can include a local level and cover a specific geographical territory, legal and cultural space, or a particular period of time. However, the data can be also considered in a global comparative context, which includes relationships with other spaces and periods.</p>
+<p>Historical data often does not provide accurate numbers. Moreover, historians often deal with not only numerical data. For instance, if we need to visualize connections between actors or a genealogy of the concept.
+Statistics and geography is not only the data, which can be visualized using R instruments.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
