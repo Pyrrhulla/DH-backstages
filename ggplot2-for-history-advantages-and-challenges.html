@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 ggplot2 for history: advantages and challenges | DH tutorials</title>
-  <meta name="description" content="Chapter 2 ggplot2 for history: advantages and challenges | DH tutorials" />
+  <title>Chapter 5 ggplot2 for history: advantages and challenges | DH tutorials</title>
+  <meta name="description" content="Chapter 5 ggplot2 for history: advantages and challenges | DH tutorials" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 ggplot2 for history: advantages and challenges | DH tutorials" />
+  <meta property="og:title" content="Chapter 5 ggplot2 for history: advantages and challenges | DH tutorials" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 ggplot2 for history: advantages and challenges | DH tutorials" />
+  <meta name="twitter:title" content="Chapter 5 ggplot2 for history: advantages and challenges | DH tutorials" />
   
   
   
@@ -24,14 +24,14 @@
 <meta name="author" content="AA" />
 
 
-<meta name="date" content="2022-04-19" />
+<meta name="date" content="2022-04-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
+<link rel="prev" href="what-r-can-make-what-cannot-and-what-its-possible-but.html"/>
 <link rel="next" href="mapping-in-leaflet-with-raster-historical-layers.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -53,6 +53,23 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
 
 
 
@@ -70,23 +87,32 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">DH Tutorial Series</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hello world</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hello world</a></li>
+<li class="chapter" data-level="2" data-path="what-is-r-for-historians.html"><a href="what-is-r-for-historians.html"><i class="fa fa-check"></i><b>2</b> What is R for historians?</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-r-can-make-what-cannot-and-what-its-possible-but"><i class="fa fa-check"></i><b>1.1</b> What R can make, what cannot and what ‘it’s possible, but…’?</a></li>
+<li class="chapter" data-level="2.1" data-path="what-is-r-for-historians.html"><a href="what-is-r-for-historians.html#what-are-the-aims-of-data-visualization"><i class="fa fa-check"></i><b>2.1</b> What are the aims of data visualization?</a></li>
+<li class="chapter" data-level="2.2" data-path="what-is-r-for-historians.html"><a href="what-is-r-for-historians.html#what-kind-of-historical-data-can-be-potentially-visualized-in-r"><i class="fa fa-check"></i><b>2.2</b> What kind of historical data can be potentially visualized in R?</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="ggplot2-for-history-advantages-and-challenges.html"><a href="ggplot2-for-history-advantages-and-challenges.html"><i class="fa fa-check"></i><b>2</b> ggplot2 for history: advantages and challenges</a></li>
-<li class="chapter" data-level="3" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html"><i class="fa fa-check"></i><b>3</b> Mapping in Leaflet with raster historical layers</a>
+<li class="chapter" data-level="3" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><i class="fa fa-check"></i><b>3</b> From soul to body: what is the optimal format for the task?</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#preparing-the-dataset-and-making-a-simple-map"><i class="fa fa-check"></i><b>3.1</b> Preparing the dataset and making a simple map</a></li>
-<li class="chapter" data-level="3.2" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#marking-an-application-and-adding-a-raster-image"><i class="fa fa-check"></i><b>3.2</b> Marking an application and adding a raster image</a></li>
-<li class="chapter" data-level="3.3" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#conclusion"><i class="fa fa-check"></i><b>3.3</b> Conclusion</a></li>
+<li class="chapter" data-level="3.1" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html#static-graphics"><i class="fa fa-check"></i><b>3.1</b> Static graphics</a></li>
+<li class="chapter" data-level="3.2" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html#app"><i class="fa fa-check"></i><b>3.2</b> App</a></li>
+<li class="chapter" data-level="3.3" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html#markdown"><i class="fa fa-check"></i><b>3.3</b> Markdown</a></li>
+<li class="chapter" data-level="3.4" data-path="from-soul-to-body-what-is-the-optimal-format-for-the-task.html"><a href="from-soul-to-body-what-is-the-optimal-format-for-the-task.html#other-methods"><i class="fa fa-check"></i><b>3.4</b> Other methods</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="timeline.html"><a href="timeline.html"><i class="fa fa-check"></i><b>4</b> Timeline</a>
+<li class="chapter" data-level="4" data-path="what-r-can-make-what-cannot-and-what-its-possible-but.html"><a href="what-r-can-make-what-cannot-and-what-its-possible-but.html"><i class="fa fa-check"></i><b>4</b> What R can make, what cannot and what ‘it’s possible, but…’?</a></li>
+<li class="chapter" data-level="5" data-path="ggplot2-for-history-advantages-and-challenges.html"><a href="ggplot2-for-history-advantages-and-challenges.html"><i class="fa fa-check"></i><b>5</b> ggplot2 for history: advantages and challenges</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="timeline.html"><a href="timeline.html#timeline-1"><i class="fa fa-check"></i><b>4.1</b> Timeline</a></li>
+<li class="chapter" data-level="5.1" data-path="ggplot2-for-history-advantages-and-challenges.html"><a href="ggplot2-for-history-advantages-and-challenges.html#historical-data-and-graphic-libraries"><i class="fa fa-check"></i><b>5.1</b> Historical data and graphic libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html"><i class="fa fa-check"></i><b>6</b> Mapping in Leaflet with raster historical layers</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#preparing-the-dataset-and-making-a-simple-map"><i class="fa fa-check"></i><b>6.1</b> Preparing the dataset and making a simple map</a></li>
+<li class="chapter" data-level="6.2" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#marking-an-application-and-adding-a-raster-image"><i class="fa fa-check"></i><b>6.2</b> Marking an application and adding a raster image</a></li>
+<li class="chapter" data-level="6.3" data-path="mapping-in-leaflet-with-raster-historical-layers.html"><a href="mapping-in-leaflet-with-raster-historical-layers.html#conclusion"><i class="fa fa-check"></i><b>6.3</b> Conclusion</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -108,8 +134,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ggplot2-for-history-advantages-and-challenges" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> ggplot2 for history: advantages and challenges</h1>
+<div id="ggplot2-for-history-advantages-and-challenges" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> ggplot2 for history: advantages and challenges</h1>
 <p><code>ggplot2</code> gives lots of instruments to create any kind of graph on the basis of dataset, coordinate system and geoms, i.e. visual presentation of the data.</p>
 <p>Accordingly <code>ggplot2</code>consists of several basic components: data, aesthetics and coordinates:</p>
 <pre><code>Ggplot(data) + &lt;geom_function&gt;(mapping = aes(&lt;mappings&gt;), stat, position) + &lt;coordinate_function&gt; + &lt;facet_function&gt; + &lt;scale_function&gt; + &lt;theme_function&gt;</code></pre>
@@ -117,15 +143,23 @@
 <p>For instance, implementing such a simple element as popup for a point, which will bring more detailed information about this particular entity, for example, year, title in the source, brief description, needs an additional JavaScript extension, because by default this function is absent in a standard <code>ggplot2</code> library. A selection of a particular entity is not possible by default either, however it can be added manually in a form of brush, where the output with the data will be shows as an another elemtnt - a data table, a plain text, etc. It is commonly used in <code>ggplot2</code> visualization and in documentation it looks:</p>
 <pre><code>brushedPoints(df, brush, xvar = NULL, yvar = NULL, panelvar1 = NULL,
   panelvar2 = NULL, allRows = FALSE)</code></pre>
-<p>For implementing this element, we need to do a couple of manipulations. First of all, it can be made only within shiny framework, which I will consider in details in the next part of the tutorial. Secondly, on a very basic level this approach means that in the dataset, the categories suggested for x and y axis might be only single that’s often not the case for historical data. For example, we would like to visualize a dataset, which contains the information about revolutions in some period of history. We have titles, years and key groups of participants. Everything works fine until the moment, when we discover that in some entities we have more than one group of participants. How shall we explain the R that we need to put this particular entity into two groups? Let’s discuss this question in the next chapter, which focuses on historical data specifics and how to approach it in an optimal way.</p>
-
+<p>For implementing this element, we need to do a couple of manipulations. First of all, it can be made only within shiny framework, which I will consider in details in the next part of the tutorial. Secondly, on a very basic level this approach means that in the dataset, the categories suggested for x and y axis might be only single that’s often not the case for historical data. For example, we would like to visualize a dataset, which contains the information about revolutions in some period of history. We have titles, years and key groups of participants. Everything works fine until the moment, when we discover that in some entities we have more than one group of participants. How shall we explain the R that we need to put this particular entity into two groups? Let’s discuss this question in the next part, which focuses on historical data specifics and how to approach it in an optimal way.</p>
+<div id="historical-data-and-graphic-libraries" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Historical data and graphic libraries</h2>
+<p>Historical datasets contain significant element of uncertainty that’s distinguish historical dataset from other types of the data. It is caused by sources that can contain different information about events, persons and locations. In addition, historical entities ofter correspond several categories that need be reflected in visual presentation and searching options.</p>
+<p>Among our projects, I worked with this sorts of entities, which contained as uncertain data as corresponded several parameters. Here there an examples:</p>
+<div id="htmlwidget-02a10b8f19b22460d38d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-02a10b8f19b22460d38d">{"x":{"filter":"none","vertical":false,"data":[["1","2","3"],["Alberigo, Giuseppe","Dall'Olio, Guido","Ducros, François-Régis"],[1985,1995,2008],["La réception du Concile de Trente par l'Eglise catholique romaine","La disciplina dei religiosi all'epoca del Concilio di Trento: sondaggi bolognesi","Le Statut Des Biens Ecclésiastiques Dans L'ancien Droit Canonique. Eléments De Théorie Juridique"],["Irenikon Chevetogne","Annali dell'Istituto storico italo-germanico in Trento","Année Canonique"],["311-337","93-140","107-129"],[58,21,50],["Journal Article","Journal Article","Journal Article"],["Academic literature, Roman Curia, Congregation of the Council, Legal historical context, Council of Trent","Academic literature, Roman Curia, Clergy in general, Religious order, Ordinary jurisdiction (bishop)","Academic literature, Clergy in general, Benefice, Ecclesiastical goods, Goods of the church, Goods of the clergy, Goods of religious orders, Possesion and property, Administration (ecclesiastical goods)"],["French","Italian","French"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>AUTHOR<\/th>\n      <th>YEAR<\/th>\n      <th>TITLE<\/th>\n      <th>JOURNAL<\/th>\n      <th>PAGES<\/th>\n      <th>VOLUME<\/th>\n      <th>TYPE<\/th>\n      <th>KEYWORDS<\/th>\n      <th>LANGUAGE<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>This is a presentation of the <code>.bib</code> file in the format of the data table. In the column ‘Keywords’ we see that journal articles correspond several categories. How could we present them in a graphic way? For example we would like to see only the sources among these entities and exclude other categories. In this case, <code>ggplot2</code> would need some extension, because otherwise R will not see a comma.</p>
+<p>I suggest to use interactive shiny app. Let’s create a simple shiny structure with our data, UI and server. For the libraries we need only shiny, <code>ggplot2</code> and <code>DT</code>.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="what-r-can-make-what-cannot-and-what-its-possible-but.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="mapping-in-leaflet-with-raster-historical-layers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
